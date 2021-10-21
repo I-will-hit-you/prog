@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>おみくじ</title>
+</head>
+<body>
+
+<header>
+    <h1>おみくじ</h1>
+    <div id = "omikuji">
+        <img src="omikuji.png" alt=""width="10%" height="10%">
+    </div>
+</header>
+
+<main>
+    <ul>
+        <li id="pull">おみくじを引く</li>
+    </ul>
+    <p id="echo"></p>
+    <p id="naiyo"></p>
+
+</main>
+
+<footer>フッター</footer>
+
+
+<script>
+//Clickイベントのブロック
+const pull = document.querySelector("#pull");
+pull.onclick = function(){  //pullをクリックしたら
+    //乱数を作る
+    const num = Math.ceil(Math.random() * 5);  //必ずMは大文字。 Math.ceil→四捨五入 １～５が表示される
+
+    //乱数をif分岐処理で分ける
+    //条件に会っていなければalert()で表示
+    if(num == 1){
+        echo.innerHTML = "大吉";
+        echo.style.color = "#fff000";
+        naiyo.innerHTML = "幸運が舞い込む";
+    }
+    if(num == 2){
+        echo.innerHTML = "中吉"; 
+        echo.style.color = "#000000";
+        naiyo.innerHTML = "比較的良い生活ができる";
+    }
+    if(num == 3){
+        echo.innerHTML = "小吉";
+        echo.style.color = "#000000";
+        naiyo.innerHTML = "可もなく不可もなく";
+    }
+    if(num == 4){
+        echo.innerHTML = "吉";
+        echo.style.color = "#000000";
+        naiyo.innerHTML = "周囲の警戒を怠るべからず";
+    }
+    if(num == 5){
+        echo.innerHTML = "凶";
+        echo.style.color = "#ff0000";
+        naiyo.innerHTML = "災い有り";
+    }
+}
+
+
+
+
+
+</script>
+</body>
+</html>
