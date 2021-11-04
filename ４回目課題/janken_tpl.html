@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>じゃんけん勝負with空港お姉さん</h1> 
+</header>
+
+<main>
+  <ul>
+    <li id="gu_btn">グー</li>
+    <li id="cho_btn">チョキ</li>
+    <li id="par_btn">パー</li>
+  </ul>
+<div id="yourName">あなた</div>
+<div id="galName">お姉さん</div>
+<div id = "gal">
+    <img src="お姉さん.png" alt=""width="15%" height="15%">
+</div>
+<div id = "yourHand">
+  <img src="ｸﾞｰ.png">
+</div>
+<div id = "galHand">
+  <img src="ｸﾞｰ.png">
+</div>
+  <div>お姉さんの出した手は「<span id="pc_hands"></span>」</div>
+  <div id="judgment"></div>
+</main>
+
+<footer></footer>
+<script> 
+//グー//
+$("#gu_btn").on("click",function(){
+  const num = Math.ceil(Math.random() * 3);
+  //ファーストチャレンジ
+  if(num == 1){
+    $("#yourHand").html('<img src="ｸﾞｰ.png">')
+    $("#galHand").html('<img src="ｸﾞｰ.png">')
+
+    $("#pc_hands").html("グー");
+    $("#judgment").html("相子");
+    $("#gal").html('<img src="お姉さん.png" alt=""width="15%" height="15%">');
+    $("#yourName").html("あなた");
+    $("#galName").html("お姉さん");
+    $("#yourName").css("color","#000000");
+    $("#galName").css("color","#000000");
+  }
+
+  if(num == 2){
+    $("#yourHand").html('<img src="ｸﾞｰ.png">')
+    $("#galHand").html('<img src="ﾁｮｷ.png">')
+
+    $("#pc_hands").html("チョキ");
+    $("#judgment").html("勝ち");
+    $("#gal").html('<img src = "お姉さんSP.png" alt=""width="15%" height="15%">');
+    $("#yourName").html("あなた　winner");
+    $("#galName").html("loser　お姉さん");
+    $("#yourName").css("color","#FFFF00");
+    $("#galName").css("color","#000000");
+  }
+    
+
+  if(num == 3){
+    $("#yourHand").html('<img src="ｸﾞｰ.png">')
+    $("#galHand").html('<img src="ﾊﾟｰ.png">')
+
+    $("#pc_hands").html("パー");
+    $("#judgment").html("負け");
+    $("#gal").html('<img src = "お姉さんBK1.png" alt=""width="15%" height="15%">');
+    $("#galName").html("winner　お姉さん");
+    $("#yourName").html("あなた　loser");
+    $("#yourName").css("color","#000000");
+    $("#galName").css("color","#FFFF00");
+  }
+});
+
+
+//チョキ//
+$("#cho_btn").on("click",function(){
+  const num = Math.ceil(Math.random() * 3);
+  if(num == 1){
+    $("#yourHand").html('<img src="ﾁｮｷ.png">')
+    $("#galHand").html('<img src="ｸﾞｰ.png">')
+
+    $("#pc_hands").html("グー");
+    $("#judgment").html("負け");
+    $("#gal").html('<img src = "お姉さんBK1.png" alt=""width="15%" height="15%">');
+    $("#galName").html("winner　お姉さん");
+    $("#yourName").html("あなた　loser");
+    $("#yourName").css("color","#000000");
+    $("#galName").css("color","#FFFF00");
+  } 
+
+  if(num == 2){
+    $("#yourHand").html('<img src="ﾁｮｷ.png">')
+    $("#galHand").html('<img src="ﾁｮｷ.png">')
+
+    $("#pc_hands").html("チョキ");
+    $("#judgment").html("相子");
+    $("#gal").html('<img src="お姉さん.png" alt=""width="15%" height="15%">');
+    $("#yourName").html("あなた");
+    $("#galName").html("お姉さん");
+    $("#yourName").css("color","#000000");
+    $("#galName").css("color","#000000");
+  }
+
+  if(num == 3){
+    $("#yourHand").html('<img src="ﾁｮｷ.png">')
+    $("#galHand").html('<img src="ﾊﾟｰ.png">')
+
+    $("#pc_hands").html("パー");
+    $("#judgment").html("勝ち");
+    $("#gal").html('<img src = "お姉さんSP.png" alt=""width="15%" height="15%">');
+    $("#yourName").html("あなた　winner");
+    $("#galName").html("loser　お姉さん");
+    $("#yourName").css("color","#FFFF00");
+    $("#galName").css("color","#000000");
+  }
+});
+
+
+//パー//
+$("#par_btn").on("click",function(){
+  const num = Math.ceil(Math.random() * 3);
+  if(num == 1){
+    $("#yourHand").html('<img src="ﾊﾟｰ.png">')
+    $("#galHand").html('<img src="ｸﾞｰ.png">')
+
+    $("#pc_hands").html("グー");
+    $("#judgment").html("勝ち");
+    $("#gal").html('<img src = "お姉さんSP.png" alt=""width="15%" height="15%">');
+    $("#yourName").html("あなた　winner");
+    $("#galName").html("loser　お姉さん");
+    $("#yourName").css("color","#FFFF00");
+    $("#galName").css("color","#000000");
+  }
+
+  if(num == 2){
+    $("#yourHand").html('<img src="ﾊﾟｰ.png">')
+    $("#galHand").html('<img src="ﾁｮｷ.png">')
+    
+    $("#pc_hands").html("チョキ");
+    $("#judgment").html("負け");
+    $("#gal").html('<img src = "お姉さんBK1.png" alt=""width="15%" height="15%">');
+    $("#galName").html("winner　お姉さん");
+    $("#yourName").html("あなた　loser");
+    $("#yourName").css("color","#000000");
+    $("#galName").css("color","#FFFF00");
+  }
+
+  if(num == 3){
+    $("#yourHand").html('<img src="ﾊﾟｰ.png">')
+    $("#galHand").html('<img src="ﾊﾟｰ.png">')
+
+    $("#pc_hands").html("パー");
+    $("#judgment").html("相子");
+    $("#gal").html('<img src="お姉さん.png" alt=""width="15%" height="15%">');
+    $("#yourName").html("あなた");
+    $("#galName").html("お姉さん");
+    $("#yourName").css("color","#000000");
+    $("#galName").css("color","#000000");
+  }
+
+});
+
+
+
+</script>
+</body>
+</html>
