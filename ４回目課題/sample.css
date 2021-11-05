@@ -1,0 +1,83 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+    
+}
+header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-size: 25px;
+}
+main{
+    border-bottom:1px solid #ccc;
+    margin:40px;
+    background: rgb(166, 200, 245);
+}
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+p{
+    font-size:50%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:100px;
+}
+ul{
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+}
+li{
+    text-align: center;
+    list-style-type:none;
+    border: 1px solid #666;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+li:hover{
+    background: #0066CC;
+    color:#fff;
+}
+
+#pc_hands{
+    color:#ff0000;
+}
+
+
+#gal{
+    text-align: center;
+}
+
+#yourName{
+    position: absolute;
+    left: 50px;
+
+}
+
+#galName{
+    text-align: right;
+    position: absolute;
+    right: 50px;
+}
+
+#yourHand{
+    position: absolute;
+    bottom: 30%;
+    left: 200px;
+}
+
+
+#galHand{
+    text-align: right;
+    position: absolute;
+    bottom: 30%;
+    right: 200px;
+}
