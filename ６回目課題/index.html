@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myMemoPad</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+</head>
+<body>
+<header>
+<h1>MemoPad</h1>
+</header>
+<main>
+    <input type="text" id="key">
+    <textarea id="memo"></textarea>
+    <ul>
+        <li id="save">📝Save</li>
+    </ul>
+</main>
+<table id="list">
+<li id="clear"></li>
+<!-- ここに追加データが挿入される -->
+</table>
+<script>
+
+//1.Save クリックイベント
+$("#save").on("click",function(){ //クリック
+    $("#clear").html("🚮Clear");
+    const key = $("#key").val();
+    const value = $("#memo").val();  
+    localStorage.setItem(key, value);// 内容のセーブ
+    const html = '<tr><th>'+key+'</th><td>'+value+'</td></tr>' //html=''
+    $("#list").append(html);
+    
+});
+
+
+
+
+//2.clear クリックイベント
+// $("#clear").on("click",function(){ 
+$("#clear").on("click",function(){ 
+    localStorage.clear(); //データを消す
+    $("#list").empty();
+    $("#clear").html("");
+});
+
+
+
+
+//3.ページ読み込み：保存データ取得表示
+    for(let i=0; i<localStorage.length; i++){
+        const key = localStorage.key(i); //key名
+        const value = localStorage.getItem(key); // value名
+        const html = '<tr><th>'+key+'</th><td>'+value+'</td></tr>' //html=''
+        $("#list").append(html);
+        $("#clear").html("🚮Clear");
+    }
+
+
+
+</script>
+<footer><small>G's</small></footer>
+</body>
+</html>
